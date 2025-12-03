@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cover Letter</title>
+    <style>
+      html,
+      body {
+        font-family: "Helvetica", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: white;  /* Use white background for PDF */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      /* PDF-specific styles */
+      @page {
+        size: A4;
+        margin: 0in;  /* No page margins since we handle spacing in content */
+      }
+
+      .container {
+        /* put self horizontally centered */
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: #fff;
+        width: 650px;
+        /* letter ratio - use auto height to prevent second page */
+        min-height: auto;
+        padding: 30px 50px;
+        /* Remove box-shadow for PDF */
+        position: relative;
+      }
+
+      .company-initials-block {
+        position: absolute;
+        top: 0px;
+        right: 30px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+
+      .company-line {
+        height: 24px;
+        border-right: 2px solid black;
+        margin-bottom: 6px;
+        width: 100%;
+      }
+
+      .company-name {
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 13px;
+        margin-top: 2px;
+        color: #333;
+        text-align: right;
+        width: 100%;
+        align-self: flex-end;
+      }
+
+      .content p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+        font-size: 12px;
+        color: #333;
+      }
+
+      .signature {
+        font-family: {{ signature_font_family }};
+        margin-top: 30px;
+        font-size: 24px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="company-initials-block">
+        <div class="company-line"></div>
+        <div class="company-name">{{ company_name }}</div>
+      </div>
+
+      <div class="content">
+        {% for paragraph in cover_letter.split('\n\n') %}
+        {% if paragraph.strip() %}
+        <p>{{ paragraph.strip() }}</p>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="signature">{{ signature_name }}</div>
+    </div>
+  </body>
+</html>

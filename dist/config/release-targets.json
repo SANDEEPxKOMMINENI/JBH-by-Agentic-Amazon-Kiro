@@ -1,0 +1,18 @@
+{
+  "playwright_browser": {
+    "owner": "lookr-fyi",
+    "repo": "playwright_browser",
+    "private": false,
+    "channel": "testing",
+    "description": "Internal testing feed for JobHuntr auto-update (0.0.4 -> 0.0.5)",
+    "referenceVersion": "0.0.5"
+  },
+  "job-application-bot-by-ollama-ai": {
+    "owner": "lookr-fyi",
+    "repo": "job-application-bot-by-ollama-ai",
+    "private": false,
+    "channel": "stable",
+    "description": "Public production releases (planned 2.0.0)",
+    "referenceVersion": "2.0.0"
+  }
+}

@@ -1,0 +1,31 @@
+# Core automation libraries (Python 3.11.12 compatible)
+playwright==1.52.0
+
+# Web server framework
+fastapi>=0.104.1
+uvicorn[standard]>=0.24.0
+
+# Template engine for instruction formatting
+jinja2>=3.1.2
+
+# Basic dependencies
+python-dotenv>=1.0.0
+requests>=2.31.0
+httpx>=0.27.0
+python-dateutil>=2.8.2
+beautifulsoup4>=4.12.0
+
+# Data validation
+pydantic>=2.11.5
+
+# System monitoring
+psutil>=5.9.0
+
+# Autonomous browser agent
+browser-use>=0.3.25
+
+# Cost tracking / observability
+langfuse>=2.0.0
+
+
+regex
